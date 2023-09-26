@@ -1,0 +1,28 @@
+<div className="my-1">
+    <label className="mb-1 block text-black dark:text-white">
+      [sl] [label]
+    </label>
+    <span id="[id]"></span>
+    <SelectComponent defaultValueArray={[]}
+                                 placeholder="Select [variable]"
+                                 isSearchable
+                                 isClearable
+                                 isMulti
+                                  name="[variable]" options={option_data.[variable]} 
+                                  
+                      />
+  
+  
+  {
+    errors.[error_slug]
+    &&
+    errors.[error_variable]
+    &&
+    touched.[error_slug]  
+    &&
+    touched.[error_variable] && ( 
+        <span className="mb-3 font-semibold text-[#B45454]">
+            {errors.[variable]}
+        </span>   
+    )}
+  </div>

@@ -1,0 +1,84 @@
+[enabled_rules]
+<div className="my-1 grid grid-cols-2 gap-4">
+  <div className="flex flex-col">
+  <label className="mb-1 block text-black dark:text-white">
+    [sl] [label]
+  </label>
+  <span id="[id]"></span>
+<Field 
+
+onChange={(e:any)=>{
+  const {value, name} = e.target;  
+  if(value.length > 2){
+    setFieldValue("[variable].reason",{"value":"","label":""})
+  }
+  setFieldValue(
+    name,
+    value
+  );
+
+}}
+
+    className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+name="[variable].text" placeholder="[error_label] " type="[type]" />
+  
+
+{values.[variable].text.length < 2 && <>
+{ option_data.[variable] && option_data.[variable].map((v,i)=>(
+  <div key={i}>
+
+    <Field
+            label={v.label}            
+            component={RadioComponent}
+            name="[variable].reason"
+            checked={values.[variable].reason.value === v.value}
+            onClick={(e:any) => {
+                const {checked, name} = e.target;
+                [disable_logic]
+                [skip_logic]                
+                if (checked) {
+                  setFieldTouched(name,true);
+
+                  setFieldValue(
+                      name,
+                      {value:v.value, label:v.label}
+                  );
+                }else{
+                    setFieldTouched(name,false);
+                    setFieldValue(
+                        name,
+                        {value:'', label:''}
+                    );
+
+                }
+            
+            }}
+          />
+
+  </div>
+))
+}
+
+</>}
+
+{
+errors.[error_slug]
+&&
+errors.[error_variable]
+&&
+touched.[error_slug]
+&&
+touched.[error_variable] && ( 
+    <span className="mb-3 font-semibold text-[#B45454]">
+        {errors.[variable]}
+    </span>   
+)}
+
+</div>
+<div className="flex flex-col">
+  <div className="py-2">
+  [instruction]
+  </div>
+</div>
+</div>
+[_enabled_rules]

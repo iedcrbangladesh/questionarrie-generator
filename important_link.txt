@@ -1,0 +1,11 @@
+https://claritydev.net/blog/build-a-multistep-form-with-react-hook-form
+https://www.psycopg.org/articles/2012/10/01/prepared-statements-psycopg/
+
+
+
+
+https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/download/
+
+https://logfetch.com/nextjs-multiple-layouts/
+
+https://www.makeuseof.com/create-custom-layout-in-nextjs/

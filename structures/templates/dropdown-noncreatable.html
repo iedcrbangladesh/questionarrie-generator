@@ -1,0 +1,50 @@
+[enabled_rules]
+<div>
+<span id="[id]"></span>
+<div className="my-1 grid grid-cols-2 gap-4">
+  <div className="flex flex-col">
+    <label className="mb-1 block text-black dark:text-white">
+      [sl] [label]
+    </label>
+    
+    <SelectNonCreatableComponent defaultValueArray={{ "label":"","value":"" }}
+                                 placeholder="Select [error_label]"
+                                 isSearchable
+                                 isClearable                                 
+                                  name="[variable]" options={option_data.[variable]}
+
+                                  onParentChange={(v:any, name:any) => {
+                
+                //alert(name);
+
+                [disable_logic]
+                [skip_logic]                
+                
+                
+            
+            }} 
+                                  
+                      />
+  
+  
+  {
+    errors.[error_slug]
+    &&
+    errors.[error_variable]
+    &&
+    touched.[error_slug]
+    &&
+    touched.[error_variable] && ( 
+        <span className="mb-3 font-semibold text-[#B45454]">
+            {errors.[variable].label}
+        </span>   
+    )}
+  </div>
+  <div className="flex flex-col">
+    <div className="py-2">
+      [instruction]
+    </div>
+</div>
+</div>
+</div>
+[_enabled_rules]

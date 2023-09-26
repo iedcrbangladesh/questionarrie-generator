@@ -1,0 +1,66 @@
+[enabled_rules]
+<div>
+
+<span id="[id]"></span>
+<div className="my-1 grid grid-cols-2 gap-4">
+  <div className="flex flex-col">
+  <label className="mb-1 block text-black dark:text-white">
+   [sl] [label]
+  </label>
+  
+{ option_data.[variable] && option_data.[variable].map((v,i)=>(
+  <div key={i}>
+
+    <Field
+            label={v.label}            
+            component={RadioComponent}
+            name="[variable]"
+            checked={values.[variable].value === v.value}
+            onClick={(e:any) => {
+                const {checked, name} = e.target;
+                [disable_logic]
+                [skip_logic]                
+                if (checked) {
+                  setFieldTouched(name,true);
+
+                  setFieldValue(
+                      name,
+                      {value:v.value, label:v.label}
+                  );
+                }else{
+                    setFieldTouched(name,false);
+                    setFieldValue(
+                        name,
+                        {value:'', label:''}
+                    );
+
+                }
+            
+            }}
+          />
+
+  </div>
+))
+}
+{
+  errors.[error_slug]
+  &&
+  errors.[error_variable]
+  &&
+  touched.[error_slug]
+  &&
+  touched.[error_variable] && ( 
+      <span className="mb-3 font-semibold text-[#B45454]">
+          {errors.[variable].label}
+      </span>   
+  )}
+</div>
+<div className="flex flex-col">
+  <div className="py-2">
+  [instruction]
+  </div>
+</div>
+</div>
+
+</div>
+[_enabled_rules]
